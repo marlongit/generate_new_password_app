@@ -23,13 +23,13 @@ class _GererateNewPasswordState extends State<GererateNewPassword> {
       keyboardType: TextInputType.number,
       style: TextStyle(fontSize: 20, color: Colors.white),
       decoration: InputDecoration(
-          labelText: "Quantidade de caracters",
+          labelText: "Number of characters",
           labelStyle: TextStyle(fontSize: 30.0, color: Colors.white),
           fillColor: Colors.white,
           focusColor: Colors.white),
       validator: (value) {
         if (value.isEmpty) {
-          return 'Informe um valor';
+          return 'Entry with value';
         }
         return null;
       },
@@ -79,7 +79,7 @@ class _GererateNewPasswordState extends State<GererateNewPassword> {
         child: ElevatedButton(
             key: Key("btnSalva"),
             child: Text(
-              "Gerar nova senha",
+              "Generate",
               style: TextStyle(fontSize: 30.0),
             ),
             style: ButtonStyle(
@@ -107,7 +107,7 @@ class _GererateNewPasswordState extends State<GererateNewPassword> {
             withCaractersSpecial,
             int.parse(lengthPassword.text))
         .then((value) => {
-              alert(context, "Nova senha", value),
+              alert(context, "New password", value),
               if (value.isNotEmpty) {novaSenha = value}
             })
         .whenComplete(() => null);

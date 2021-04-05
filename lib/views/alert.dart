@@ -7,7 +7,12 @@ alert(BuildContext context, String titulo, String message) {
       builder: (context) {
         return AlertDialog(
             title: Text(titulo),
-            content: Text(message),
+            content: SelectableText(
+              message,
+              showCursor: true,
+              toolbarOptions: ToolbarOptions(
+                  copy: true, selectAll: true, cut: false, paste: false),
+            ),
             backgroundColor: Colors.white,
             scrollable: true,
             actions: [
